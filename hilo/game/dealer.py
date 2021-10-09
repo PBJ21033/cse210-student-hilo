@@ -27,7 +27,7 @@ class Dealer:
             self (Dealer): instance of Dealer
         '''
         while self.keep_playing:
-            self.get_inputs()
+            is_higher = self.get_inputs()
             self.do_updates()
             self.do_outputs()
 
