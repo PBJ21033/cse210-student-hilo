@@ -7,14 +7,25 @@ class Dealer:
     Attributes:
         keep_playing (bool): Whether the player continues to play
         score (int): The total number of points earned
-        drawer (Drawer): Deals directly with cards'''
+        drawer (Drawer): Deals directly with cards
+    '''
 
     def __init__(self):
+        '''The class constructor.
+        
+        Args:
+            self (Dealer): instance of Dealer
+        '''
         self.keep_playing = True
         self.score = 0
         self.drawer = Drawer()
 
     def start_game(self):
+        '''Starts game loop and controls sequence of play.
+        
+        Args:
+            self (Dealer): instance of Dealer
+        '''
         while self.keep_playing:
             self.get_inputs()
             self.do_updates()
