@@ -32,7 +32,6 @@ class Dealer:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
-        pass
 
     def get_inputs(self):
         pass
