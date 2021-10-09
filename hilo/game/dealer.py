@@ -34,7 +34,13 @@ class Dealer:
             self.do_outputs()
 
     def get_inputs(self):
-        pass
+        repeat = True
+        while repeat:
+            user_choice = input('Higher or lower? [h/l] ')
+            if user_choice.lower() == 'h':
+                return True
+            elif user_choice.lower() == 'l':
+                return False
 
     def do_updates(self):
         points = self.drawer.score_card
