@@ -28,13 +28,15 @@ class Dealer:
         Args:
             self (Dealer): instance of Dealer
         '''
-        # self.drawer.draw_card()
         while self.keep_playing:
-            # is_higher = self.get_inputs()
-            # self.do_updates(is_higher)
             self.do_outputs()
 
     def get_inputs(self):
+        '''Get the input from the user on whether the card will be higher or lower.
+        
+        Args:
+            self (Dealer): instance of Dealer
+        '''
         repeat = True
         while repeat:
             user_choice = input('Higher or lower? [h/l] ')
@@ -44,14 +46,23 @@ class Dealer:
                 return False
 
     def do_updates(self, is_higher):
+        '''Update the user's score
+        
+        Args:
+            self (Dealer): instance of Dealer
+            is_higher (bool): bool representation of user's choice of higher or lower
+        '''
         points = self.drawer.score_card(is_higher)
         self.score += points
 
     def do_outputs(self):
         '''Prints game information, including score and card values, during and after each round.
+        
+        Args:
+            self (Dealer): instance of Dealer
         '''
         new_card, old_card = self.drawer.draw_card()
-        print(f'The card is: {old_card}')
+        print(f'\nThe card is: {old_card}')
         card_choice = self.get_inputs()
         self.do_updates(card_choice)
         print(f'Next card was: {new_card}')
