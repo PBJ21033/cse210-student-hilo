@@ -14,3 +14,8 @@ calc 100 if right 75 wrong
 if you get to 0 then you lose
 
 """
+
+from game.dealer import Dealer
+
+dealer = Dealer()
+dealer.start_game()

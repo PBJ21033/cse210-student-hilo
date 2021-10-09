@@ -31,7 +31,7 @@ class Drawer(object):
             
     def can_draw(self, score):
         self.old_card = self.new_card
-        if bool(score) or self.turn_number == 0:
+        if score > 0:
             return True
         else:
             return False

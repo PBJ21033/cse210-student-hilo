@@ -1,4 +1,4 @@
-from drawer import Drawer
+from game.drawer import Drawer
 
 class Dealer:
     '''The person who directs the game. Keeps track of score
@@ -19,7 +19,7 @@ class Dealer:
                 self (Dealer): instance of Dealer
         '''
         self.keep_playing = True
-        self.score = 0
+        self.score = 300
         self.drawer = Drawer()
 
     def start_game(self):
@@ -28,9 +28,10 @@ class Dealer:
         Args:
             self (Dealer): instance of Dealer
         '''
+        # self.drawer.draw_card()
         while self.keep_playing:
-            self.get_inputs()
-            self.do_updates()
+            # is_higher = self.get_inputs()
+            # self.do_updates(is_higher)
             self.do_outputs()
 
     def get_inputs(self):
@@ -42,22 +43,22 @@ class Dealer:
             elif user_choice.lower() == 'l':
                 return False
 
-    def do_updates(self):
-        points = self.drawer.score_card
+    def do_updates(self, is_higher):
+        points = self.drawer.score_card(is_higher)
         self.score += points
 
     def do_outputs(self):
         '''Prints game information, including score and card values, during and after each round.
         '''
-        print(f'The card is: {None}')
+        new_card, old_card = self.drawer.draw_card()
+        print(f'The card is: {old_card}')
         card_choice = self.get_inputs()
-        second_card = self.drawer.draw_card()
-        print(f'Next card was: {second_card}')
-        print(f'Your score is: {None}')
+        self.do_updates(card_choice)
+        print(f'Next card was: {new_card}')
+        print(f'Your score is: {self.score}')
 
-        if self.drawer.can_draw():
+        if self.drawer.can_draw(self.score):
             choice_play = input('Keep playing? [y/n] ')
             self.keep_playing = (choice_play == 'y')
         else:
             self.keep_playing = False
-        pass
