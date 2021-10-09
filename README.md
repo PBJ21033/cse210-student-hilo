@@ -35,4 +35,8 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your names and emails here
+Trevin Jones - jon20060@byui.edu
+Peter Benson - ben21033@byui.edu
+Devin Johnson - joh17013@byui.edu
+Carlos Lespin - les19005@byui.edu
+Jadan White - whi21014@byui.edu
