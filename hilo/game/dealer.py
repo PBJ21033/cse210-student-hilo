@@ -19,8 +19,11 @@ class Dealer:
         self.score += points
 
     def do_outputs(self):
+<<<<<<< Updated upstream
         '''Prints game information, including score and card values, during and after each round.
         '''
+=======
+>>>>>>> Stashed changes
         print(f'The card is: {None}')
         card_choice = self.get_inputs()
         second_card = self.drawer.draw_card()
